@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>ARK Blockchain Explorer</title>
-
-        <!-- Fonts -->
-        <!-- Styles -->
-
-    </head>
-    <body>
-    </body>
-</html>
+@extends('layout')
+@section('page-title')
+    Blocks
+@endsection
+@section('content')
+    Blocks content
+@endsection
