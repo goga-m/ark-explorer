@@ -24,7 +24,7 @@
                 <div class="px-5">
                     <!-- Page title -->
                     <h1 class="text-2xl md:text-3xl mb-5 md:mb-6 text-theme-text-primary sm:mr-5">
-                            @yield('page-title')
+                        @yield('page-title')
                     </h1>
                 </div>
 

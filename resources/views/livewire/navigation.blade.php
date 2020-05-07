@@ -8,9 +8,10 @@
 
         <!-- Navigation items -->
         <ul class="w-full relative flex px-4 md:px-8 overflow-auto flex-now-wrap">
+
             @foreach($navigationItems as $item)
                 <li>
-                    <a href="{{ $item['path'] }}" title="{{ $item['title'] }} "class="px-2 py-4 flex flex-none items-center border-b-2 mt-2px h-50px md:h-80px border-transparent hover:border-theme-accents hover:text-blue transition">
+                    <a href="{{ $item['path'] }}" title="{{ $item['title'] }}"  class="px-2 py-4 flex flex-none items-center border-b-2 mt-2px h-50px md:h-80px border-transparent hover:border-theme-accents hover:text-blue transition {{ Request::is($item['path']) ? 'border-theme-accents' : '' }}">
                         {{ $item['name'] }}
                     </a>
                 </li>
