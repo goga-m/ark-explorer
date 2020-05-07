@@ -80704,6 +80704,7 @@ video {
   background: var(--nav-background);
   z-index: 2;
   display: flex;
+  box-shadow:  var(--theme-shadow);
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto
@@ -80723,6 +80724,6 @@ video {
 
 .main-content {
   background: var(--nav-background);
-  /* border-radius: .5rem; */
+  box-shadow:  var(--theme-shadow);
 }
 

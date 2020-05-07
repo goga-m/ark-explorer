@@ -21,11 +21,15 @@
             <div class="max-w-2xl mx-auto md:pt-5">
 
                 <!-- Content top section -->
-                <div class="px-5">
+                <div class="flex justify-between flex-wrap px-5 sm:px-10 xl:px-0">
                     <!-- Page title -->
+
                     <h1 class="text-2xl md:text-3xl mb-5 md:mb-6 text-theme-text-primary sm:mr-5">
                         @yield('page-title')
                     </h1>
+                    <div class="sm:flex items-center mb-6">
+                        <livewire:network-switcher>
+                    </div>
                 </div>
 
                 <!-- Main content section -->

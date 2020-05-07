@@ -2,6 +2,7 @@
   background: var(--nav-background);
   z-index: 2;
   display: flex;
+  box-shadow:  var(--theme-shadow);
   @apply .container
 }
 
@@ -18,4 +19,5 @@
 
 .main-content {
   background: var(--nav-background);
+  box-shadow:  var(--theme-shadow);
 }
