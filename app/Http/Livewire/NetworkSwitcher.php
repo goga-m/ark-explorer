@@ -23,13 +23,12 @@ class NetworkSwitcher extends Component
     ];
 
     /*
-     * Get the existing selected network from session
+     * Get the existing selected network from session.
      * (SelectedNetwork Controller).
      */
     public function mount()
     {
-        $networkHandler = new SelectedNetwork();
-        $this->selectedNetwork = $networkHandler->getName();
+        $this->selectedNetwork = SelectedNetwork::getName();
     }
 
     /*
@@ -38,10 +37,13 @@ class NetworkSwitcher extends Component
     public function changeNetwork($network)
     {
 
-        $networkHandler = new SelectedNetwork();
-        $networkHandler->set($network);
-
+        SelectedNetwork::set($network);
         $this->selectedNetwork = $network;
+
+        // Only to trigger the change happened, without values.
+        // All components that are listening should be able to
+        // retrieve network info from ChangeNetwork Controller (session).
+        $this->emit('changeNetwork');
     }
 
     public function render()
