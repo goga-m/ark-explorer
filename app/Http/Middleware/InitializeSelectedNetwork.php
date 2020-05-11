@@ -18,8 +18,7 @@ class InitializeSelectedNetwork
     public function handle($request, Closure $next)
     {
 
-        $selected = new SelectedNetwork();
-        $selected->setDefaultIfNotExists();
+        SelectedNetwork::setDefaultIfNotExists();
 
         return $next($request);
     }
