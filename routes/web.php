@@ -55,3 +55,17 @@ Route::get('/transactions/{page}', function ($page) {
 Route::get('/transaction/{id}', function ($id) {
     return view('transaction', ['id' => $id]);
 });
+
+/*
+ * Wallets list.
+ */
+Route::get('/wallets/', function () {
+    return view('wallets', ['page' => 1]);
+});
+
+/*
+ * Wallets list (selected page).
+ */
+Route::get('/wallets/{page}', function ($page) {
+    return view('wallets', ['page' => $page]);
+});
