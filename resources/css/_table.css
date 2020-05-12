@@ -1,0 +1,134 @@
+/*
+ * Responsive table.
+ *
+ * Displays columns as lines on small devices,
+ * using the data-label attribute on each td.
+ *
+ * Regular table can be style without the need of extra markup
+ * for small screens.
+ *
+ * It can also serve as a table for loading state,
+ * having the 'glow' skeleton placeholder effect.
+ * To do so, insert a div with .skeleton class inside in each td.
+ */
+
+/* Full width no margins, paddings */
+.table {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Use odd/even different coloring */
+.table tbody tr:nth-child(2n) {
+    background: var(--color-theme-table-row);
+}
+
+/* Skeleton is not visible on odd rows (for large screens) */
+.table tbody tr:nth-child(2n) .skeleton {
+    display: none;
+}
+
+/* Color on thead */
+.table thead tr {
+    color: var(--color-theme-text-thead);
+}
+
+/* Standard cell padding, no border style */
+.table td, table th {
+    padding: 1rem .5rem;
+    border-style: none;
+}
+
+/* Add padding at leftmost/rightmost cells */
+.table td:first-child, .table th:first-child {
+    padding-left: 3.125rem;
+}
+
+.table td:last-child, .table th:last-child {
+    padding-right: 3.125rem;
+}
+
+/* Table skeleton (glow) animation one loading state */
+.skeleton {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 12px;
+    background: #f7f7f7;
+    margin: 5px 0;
+    border-radius: 10px;
+}
+
+.skeleton:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #f7f7f7, #ffffff, #f7f7f7);
+    animation: progress 1s ease-in-out infinite;
+}
+
+
+
+@keyframes progress {
+    0% {
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+/* Mobile overrides */
+@media screen and (max-width: 768px) {
+
+    /* data-label on the left, skeleton placeholder on the right */
+    .skeleton {
+        width: auto;
+    }
+
+    /* Override skeleton colors for odd */
+    .table tbody tr:nth-child(2n) .skeleton {
+        display: block;
+        width: auto;
+        background: #eeeff7;
+    }
+
+    .table tbody tr:nth-child(2n) .skeleton:after {
+        background: linear-gradient(90deg, #eeeff7, #ffffff, #eeeff7);
+    }
+
+    /* Hide normal thead (data-label is displayed instead) */
+    .table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    /* Treat colums as rows, full width and left/right paddings */
+    .table tr { display: block; }
+    .table td {
+        border-bottom: 1px solid var(--theme-border);
+        display: block;
+        text-align: right;
+        padding-right: 1.25rem!important;
+        padding-left: 1.25rem!important;
+        min-height: 55px;
+    }
+
+    /* Show the label (data-label) on the left of each column (now row) */
+    .table td::before {
+        content: attr(data-label);
+        float: left;
+        margin-right: 40px;
+    }
+}
+

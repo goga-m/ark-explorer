@@ -10,7 +10,7 @@
         <tbody>
             @for ($i = 0; $i < $limit; $i++)
                 <tr>
-                @foreach ($columnLabels as $label => $classes)
+                    @foreach ($columnLabels as $label => $classes)
                         <td scope="row" data-label="{{ $label }}"><div class="skeleton"></div></td>
                     @endforeach
                 </tr>
