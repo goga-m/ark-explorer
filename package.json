@@ -23,5 +23,6 @@
     },
     "dependencies": {
         "alpinejs": "^2.3.3",
+        "turbolinks": "^5.2.0"
     }
 }

@@ -29,3 +29,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 
 // Include alpine.js
 require('alpinejs')
+
+window.Turbolinks = require('turbolinks')
+window.Turbolinks.start()
