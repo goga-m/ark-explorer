@@ -48,3 +48,10 @@ Route::get('/transactions', function () {
 Route::get('/transactions/{page}', function ($page) {
     return view('transactions', ['page' => $page]);
 });
+
+/*
+ * Detail transaction page.
+ */
+Route::get('/transaction/{id}', function ($id) {
+    return view('transaction', ['id' => $id]);
+});
