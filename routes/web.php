@@ -34,3 +34,17 @@ Route::get('/blocks/{page}', function ($page) {
 Route::get('/block/{id}', function ($id) {
     return view('block', ['id' => $id]);
 });
+
+/*
+ * Transactions page, first page.
+ */
+Route::get('/transactions', function () {
+    return view('transactions', ['page' => 1]);
+});
+
+/*
+ * Transactions page. Read page count from url
+ */
+Route::get('/transactions/{page}', function ($page) {
+    return view('transactions', ['page' => $page]);
+});
