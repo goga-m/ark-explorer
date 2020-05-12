@@ -69,3 +69,17 @@ Route::get('/wallets/', function () {
 Route::get('/wallets/{page}', function ($page) {
     return view('wallets', ['page' => $page]);
 });
+
+/*
+ * Wallet detail page.
+ */
+Route::get('/wallet/{walletAddress}', function ($walletAddress) {
+    return view('wallet', ['walletAddress' => $walletAddress, 'page' => 1, 'transactionType' => 'all']);
+});
+
+/*
+ * Wallet detail page with transactions pager.
+ */
+Route::get('/wallet/{walletAddress}/transactions/{type}/{page}', function ($walletAddress, $type, $page) {
+    return view('wallet', ['walletAddress' => $walletAddress, 'transactionType' => $type, 'page' => $page]);
+});
