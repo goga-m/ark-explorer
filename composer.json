@@ -9,9 +9,11 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "brick/math": "^0.8.15",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.5",
+        "jenssegers/date": "^4.0",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "livewire/livewire": "^1.0"
