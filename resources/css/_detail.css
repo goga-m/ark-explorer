@@ -1,0 +1,14 @@
+/* Styling for the rows in Detail Components */
+
+.detail-row {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--theme-border);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
