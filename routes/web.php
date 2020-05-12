@@ -28,3 +28,9 @@ Route::get('/blocks/{page}', function ($page) {
     return view('blocks', ['page' => $page]);
 });
 
+/*
+ * Detail block page.
+ */
+Route::get('/block/{id}', function ($id) {
+    return view('block', ['id' => $id]);
+});
