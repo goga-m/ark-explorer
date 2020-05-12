@@ -21,29 +21,15 @@
             <div class="max-w-2xl mx-auto md:pt-5">
 
                 <!-- Content top section -->
-                <div class="flex justify-between flex-wrap px-5 sm:px-10 xl:px-0">
-                    <!-- Page title -->
-
-                    <h1 class="text-2xl md:text-3xl mb-5 md:mb-6 text-theme-text-primary sm:mr-5">
-                        @yield('page-title')
-                    </h1>
-                    <div class="sm:flex items-center mb-6">
-                        <livewire:network-switcher>
-                    </div>
-                </div>
+                <div>@yield('content-top')</div>
 
                 <!-- Main content section -->
-                <div class="main-content mb-5 py-5 md:py-10 md:rounded-lg">
-                    <div class="px-5 sm:px-10">
-                        @yield('content')
-                    </div>
-                </div>
+                <div>@yield('content')</div>
             </div>
 
-            <!-- Scripts -->
-            <script src="{{ mix('js/app.js') }}"></script>
-            <livewire:scripts>
-
+            <div class="network-problem-msg" wire:offline>
+                Problem with the network connection
+            </div>
         </main>
     </body>
 </html>
