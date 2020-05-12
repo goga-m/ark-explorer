@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/*
+ * Show blocks on home page.
+ */
 Route::get('/', function () {
-    return view('home');
+    return view('blocks', ['page' => 1]);
 });
+
+/*
+ * Blocks page. Read page count from url
+ */
+Route::get('/blocks/{page}', function ($page) {
+    return view('blocks', ['page' => $page]);
+});
+
