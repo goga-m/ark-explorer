@@ -83,3 +83,17 @@ Route::get('/wallet/{walletAddress}', function ($walletAddress) {
 Route::get('/wallet/{walletAddress}/transactions/{type}/{page}', function ($walletAddress, $type, $page) {
     return view('wallet', ['walletAddress' => $walletAddress, 'transactionType' => $type, 'page' => $page]);
 });
+
+/*
+ * Delegates list.
+ */
+Route::get('/delegates/', function () {
+    return view('delegates', ['page' => 1]);
+});
+
+/*
+ * Delegates list ().
+ */
+Route::get('/delegates/{page}', function ($page) {
+    return view('delegates', ['page' => $page]);
+});

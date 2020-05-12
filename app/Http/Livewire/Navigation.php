@@ -14,6 +14,7 @@ class Navigation extends Component
         ['name' => 'Blocks', 'title'=> 'View latest blocks', 'path'=> '/'],
         ['name' => 'Transactions', 'title'=> 'View latest transactions', 'path'=> '/transactions'],
         ['name' => 'Wallets', 'title'=> 'View wallets', 'path'=> '/wallets'],
+        ['name' => 'Delegates', 'title'=> 'View Delegates', 'path'=> '/delegates'],
     ];
 
     public function render()
